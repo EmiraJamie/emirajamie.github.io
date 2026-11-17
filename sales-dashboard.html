@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A sales dashboard that showed reps how they earn | Emma Reese</title>
+<meta name="description" content="An incentive and sales dashboard, with a SharePoint list and Power Automate alerts behind it, that helped raise new lines from about 1.00 to 1.40 per 100 calls.">
+<meta property="og:title" content="A sales dashboard that showed reps how they earn">
+<meta property="og:description" content="An incentive and sales dashboard, with a SharePoint list and Power Automate alerts behind it, that helped raise new lines from about 1.00 to 1.40 per 100 calls.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">Emma Reese</a>
+    <nav aria-label="Main">
+      <a href="index.html#case-studies">Case studies</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="wrap">
+    <a class="back" href="index.html#case-studies">← All case studies</a>
+    <p class="eyebrow">Case study</p>
+    <h1>A sales dashboard that showed reps how they earn</h1>
+    <p class="lede">Reps couldn’t easily see how their sales turned into incentive pay. A dashboard that made it visible, and was honest about what it couldn’t show, helped lift new lines from about 1.00 to 1.40 per 100 calls within two weeks.</p>
+    <dl class="meta">
+      <div><dt>Role</dt><dd>Associate Coach</dd></div>
+      <div><dt>In use</dt><dd>About two years, across five communities</dd></div>
+      <div><dt>Tools</dt><dd>Power BI and DAX, then Excel; SharePoint; Power Automate</dd></div>
+    </dl>
+    <div class="stats" role="list">
+      <div class="stat" role="listitem">
+        <p class="label">New lines per 100 calls</p>
+        <p class="value"><span class="from">~1.00</span><span class="arrow" aria-hidden="true">→</span><span class="sr-only"> to </span>~1.40</p>
+        <p class="note">Within two weeks, held for months</p>
+      </div>
+      <div class="stat" role="listitem">
+        <p class="label">Change</p>
+        <p class="value">~40% more</p>
+      </div>
+      <div class="stat" role="listitem">
+        <p class="label">Communities using it</p>
+        <p class="value">5</p>
+      </div>
+    </div>
+
+    <h2>The problem</h2>
+    <p>Reps earned incentive pay on new lines, upgrades, device protection, and add-on features, plus short-term bonuses (SPIFFs) that changed often. There was no convenient place to see what was currently paying, how they were doing that day, or how a sale turned into pay.</p>
+
+    <h2>What I did</h2>
+    <p>The dashboard was the visible part of a small system I built and ran.</p>
+    <ul class="clean">
+      <li><strong>A SharePoint site and list.</strong> I created the site and managed its access and content. Reps logged their sales, offers, and other results in a SharePoint list, which fed the dashboard.</li>
+      <li><strong>The dashboard itself.</strong> I built it first in Power BI with DAX. It showed active SPIFFs, estimated payouts, and how each rep and coach compared. When senior leadership pulled the Power BI version over compensation-reporting rules, I rebuilt it in Excel with safeguards and set it to refresh automatically.</li>
+      <li><strong>Easy to scan.</strong> Filters for year, month, week ending, and call date; a goal tracker; new lines broken down by line type; and commission by category, coach, and day.</li>
+      <li><strong>Recognition in the team chat.</strong> Power Automate posted a message whenever a rep logged a sale, a collection, or a save. If one call had an offer, new lines, and a collection, the flow checked each one and built a single message with correct grammar for each part. Each part was color coded by how it went: a collections call that recovered 0% showed in red and one that recovered 100% in green, a new line showed in green, and an offer in a yellow-green.</li>
+      <li><strong>Same-day alerts for leaders.</strong> The same flows emailed leaders whatever they wanted to inspect, such as offers, cancellation calls, and collections. For a logged collections call, the email included the account number, past-due amount, payment, and payment-arrangement amount, so the leader could review and trend it that day.</li>
+      <li><strong>Built to be maintained.</strong> I designed the flows to be modular and scalable, so adding or changing something wasn’t a big job, and if something broke it was easy to trace and fix.</li>
+      <li><strong>Upfront about its limits.</strong> A note on the dashboard explained that it showed how pay is earned, not final payouts, which can change with chargebacks, cancellations, and returns.</li>
+    </ul>
+    <p>I built versions for five communities and kept the dashboard running for about two years. The call-tracking systems I built later used the same approach.</p>
+    <figure class="shot">
+      <a href="images/sales-dashboard-week.webp"><img src="images/sales-dashboard-week.webp" alt="Sales dashboard with filters on the left, commission and new-line breakdown tiles, a goal donut chart, new lines and payout by coach, a commission trend line, and pie charts by line type and commission type" loading="lazy"></a>
+      <figcaption>Multi-day view: goal progress, commission and payout by coach, and the trend by call date. <span class="badge">Sample data</span></figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="images/sales-dashboard-day.webp"><img src="images/sales-dashboard-day.webp" alt="The same sales dashboard filtered to a single day for one coach's team" loading="lazy"></a>
+      <figcaption>The same dashboard filtered to a single day. <span class="badge">Sample data</span></figcaption>
+    </figure>
+
+    <h2>The result</h2>
+    <p>Within two weeks, new lines rose from about <strong>1.00 to 1.40 per 100 calls</strong>, roughly a 40% increase, and the gain held for months. That’s a before-and-after comparison rather than a controlled test, but reps now had a clear, current picture of what a sale meant for them.</p>
+
+    <div class="callout">
+      <p><strong>What I took from it:</strong> people act on numbers they trust. Labeling the payouts as estimates, and saying why, made the dashboard more credible, not less.</p>
+    </div>
+
+    <p class="muted">Visuals are rebuilt with made-up data and anonymized names, and no real T-Mobile data is shown. Figures in the text are approximate results.</p>
+    <nav class="pager" aria-label="Case studies">
+      <a href="collections-report.html">← A Power BI report that helped lift collections from about 45% to 75%</a>
+      <a href="support-requests.html">Finding what was really driving 1,000 help requests a day →</a>
+    </nav>
+  </article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">© 2026 Emma Reese · <a href="mailto:emmajamier@outlook.com">emmajamier@outlook.com</a> · <a href="https://linkedin.com/in/emmaj-reese">LinkedIn</a></div>
+</footer>
+</body>
+</html>

@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Replacing 60 hours a week of manual workforce reporting | Emma Reese</title>
-<meta name="description" content="How a self-built Excel workbook replaced about 60 staff-hours a week of manual adherence reporting with a 5–10 minute daily process.">
+<meta name="description" content="How a self-built Excel workbook replaced about 60 staff-hours a week of manual offline-time adherence reporting with a 5–10 minute daily process.">
 <meta property="og:title" content="Replacing 60 hours a week of manual workforce reporting">
-<meta property="og:description" content="How a self-built Excel workbook replaced about 60 staff-hours a week of manual adherence reporting with a 5–10 minute daily process.">
+<meta property="og:description" content="How a self-built Excel workbook replaced about 60 staff-hours a week of manual offline-time adherence reporting with a 5–10 minute daily process.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,7 +26,7 @@
     <a class="back" href="index.html#case-studies">← All case studies</a>
     <p class="eyebrow">Case study</p>
     <h1>Replacing 60 hours a week of manual workforce reporting</h1>
-    <p class="lede">A redesigned Excel workbook let one person send every leader at the site a daily adherence report in 5–10 minutes. Before, the same work took five analysts about 60 hours a week.</p>
+    <p class="lede">A redesigned Excel workbook let one person send every leader at the site a daily report on how reps were using their offline time, in 5–10 minutes. Before, the same work took five analysts about 60 hours a week.</p>
     <dl class="meta">
       <div><dt>Role</dt><dd>Account Expert (self-initiated, outside my job description)</dd></div>
       <div><dt>When</dt><dd>Built late 2020–2022; in daily use until mid-2025</dd></div>
@@ -40,6 +40,7 @@
       <div class="stat" role="listitem">
         <p class="label">How often leaders got it</p>
         <p class="value"><span class="from">2–3× a week</span><span class="arrow" aria-hidden="true">→</span><span class="sr-only"> to </span>Daily</p>
+        <p class="note">Same day when needed</p>
       </div>
       <div class="stat" role="listitem">
         <p class="label">Time in use</p>
@@ -49,27 +50,46 @@
     </div>
 
     <h2>The problem</h2>
-    <p>In a contact center, <strong>adherence</strong> measures whether people are where their schedule says they should be: on calls, on break, at lunch, or in planned offline time. Leaders need it daily to manage coverage when call volume is heavy.</p>
-    <p>Each analyst on the Resource Planning team built these reports by hand for their three or four assigned communities, spending four to five hours at a time, two to three days a week. Across the team, that was roughly <strong>60 staff-hours every week</strong>. The finished report was also hard to read, so leaders had trouble finding the few people and time blocks that needed attention.</p>
+    <p>Contact-center reps get <strong>offline time</strong> for things like coaching, training, and follow-up work away from the phones. This adherence report showed leaders whether each rep was using that time appropriately or abusing it, which matters a lot when call volume is heavy.</p>
+    <p>Each analyst on the Resource Planning team built the report by hand for their three or four assigned communities, spending four to five hours at a time, two to three days a week. Across the team, that was roughly <strong>60 staff-hours every week</strong>. The finished report was also hard to read, so leaders struggled to spot the few people and time blocks that needed attention.</p>
 
     <h2>What I did</h2>
     <p>After working with the existing report as a frontline employee, I rebuilt it from the ground up on my own initiative and later shared it with Resource Planning.</p>
     <ul class="clean">
-      <li><strong>Mapped the manual steps</strong> the analysts repeated each time they built the report.</li>
-      <li><strong>Chose the freshest data source.</strong> I tested a Power Query connection to one data set, but it ran 1.5–2 days behind. Instead I built on an internal data pull that updated in roughly 30-minute increments, which made same-day coaching possible.</li>
-      <li><strong>Automated the refresh</strong> of the data and summary tables with VBA macros, cutting out the repetitive manual steps.</li>
-      <li><strong>Gave each community its own view</strong>, protected so leaders saw their own teams, and a tailored daily email showing their standing and outliers.</li>
-      <li><strong>Extended it later</strong> by adding performance metrics through Power Query, so leaders had adherence and performance in one place.</li>
+      <li><strong>Mapped the manual steps</strong> the analysts repeated each time they built the report, and designed the workbook to remove them.</li>
+      <li><strong>Chose the freshest data source.</strong> I tested a Power Query connection to one data set, but it ran 1.5–2 days behind. Instead, the workbook used an internal reporting tool that had offline-time and handle-time data through the most recent half-hour interval.</li>
+      <li><strong>Cut the daily work to one step.</strong> Someone still pulled the data from that tool and appended it to the workbook by hand. From there, everything else refreshed automatically.</li>
+      <li><strong>Gave each community its own view</strong>, protected so leaders saw their own teams, plus a tailored daily email showing their standing and outliers.</li>
+      <li><strong>Added performance metrics later</strong> through Power Query, refreshed with Excel’s Refresh All, so leaders had offline time and performance in one place.</li>
     </ul>
 
+    <h2>What leaders saw</h2>
+    <p>These are rebuilt views of the workbook with made-up data and anonymized names. Highlighted cells flag outliers so leaders could see in seconds who needed a conversation.</p>
+    <figure class="shot">
+      <a href="images/aux-daily.webp"><img src="images/aux-daily.webp" alt="Table of previous-day offline time by coach and rep across categories such as break, coaching, follow-up, lunch, meetings, and unplanned time, with outliers highlighted in pink" loading="lazy"></a>
+      <figcaption>Previous-day offline time by coach and rep, with outliers highlighted. <span class="badge">Sample data</span></figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="images/outliers.webp"><img src="images/outliers.webp" alt="Month-to-date and weekly outlier tables listing the reps with the highest handle time, after-call work, hold time, non-productive offline time, and follow-up time" loading="lazy"></a>
+      <figcaption>Month-to-date and weekly outliers, so leaders could start with the biggest gaps. <span class="badge">Sample data</span></figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="images/crt-daily.webp"><img src="images/crt-daily.webp" alt="Table of previous-day handle time, talk time, after-call work, hold time, and calls handled by rep, with community and coach summaries" loading="lazy"></a>
+      <figcaption>Previous-day handle-time metrics added later through Power Query, with community and coach breakdowns. <span class="badge">Sample data</span></figcaption>
+    </figure>
+    <figure class="shot">
+      <a href="images/weekly-readout.webp"><img src="images/weekly-readout.webp" alt="Weekly summary of offline hours by category and handle-time metrics by coach for the community" loading="lazy"></a>
+      <figcaption>The weekly readout each community’s leaders received. <span class="badge">Sample data</span></figcaption>
+    </figure>
+
     <h2>The result</h2>
-    <p>One person could refresh the workbook for the whole site and send every community its email in <strong>5–10 minutes a day</strong>, about an hour a week in total. Leaders went from getting the report two or three times a week to getting it every day. The workbook stayed in daily use for about four years, until mid-2025, when the internal tool it pulled from was retired.</p>
+    <p>One person could update the workbook for the whole site and send every community its email in <strong>5–10 minutes a day</strong>, about an hour a week in total. Leaders went from getting the report two or three times a week to getting it every day. Because the data ran through the last half hour, I sometimes pulled it during the day so people could see how they were doing before their shift ended. The workbook stayed in daily use for about four years, until mid-2025, when the internal tool it pulled from was retired.</p>
 
     <div class="callout">
-      <p><strong>What I took from it:</strong> the most convenient data source isn’t always the right one. A report that’s two days old answers yesterday’s question, so freshness mattered more than an easy connection.</p>
+      <p><strong>What I took from it:</strong> the most convenient data source isn’t always the right one. A report that’s two days old answers yesterday’s question, so fresh data mattered more than an easy connection.</p>
     </div>
 
-    <p class="muted">This write-up contains no T-Mobile data, screenshots, or internal report names. Figures are approximate results.</p>
+    <p class="muted">Visuals are rebuilt with made-up data and anonymized names, and no real T-Mobile data is shown. Figures in the text are approximate results.</p>
     <nav class="pager" aria-label="Case studies">
       <a href="index.html">← Home</a>
       <a href="collections-report.html">A Power BI report that helped lift collections from about 45% to 75% →</a>
